@@ -1,9 +1,9 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  plugins: [new MiniCssExtractPlugin(), new HtmlWebpackPlugin()],
+  plugins: [new MiniCssExtractPlugin(), new htmlWebpackPlugin()],
   entry: "./src/index.js",
   mode: "development",
   output: {
