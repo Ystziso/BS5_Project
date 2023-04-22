@@ -56,6 +56,7 @@
               type="button"
               class="btn flex-shrink-0 d-flex justify-content-center align-items-center me-2 shadow-none border border-white"
               style="width: 50px"
+              id="search-btn"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,6 +75,7 @@
               type="button"
               class="btn flex-shrink-0 d-flex justify-content-center align-items-center me-2 shadow-none"
               style="width: 50px"
+              id="cart-btn"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -177,8 +179,185 @@
     <div class="container-md">
       <div class="row">
         <!--電腦版篩選欄-->
-        <div class="col-2 d-none d-md-block"></div>
-        <div class="col">
+        <div class="col-2 d-none d-md-block">
+          <div
+            class="d-flex justify-content-start align-items-center"
+            style="height: 80px"
+          >
+            <div
+              class="fw-bold d-flex align-items-center"
+              style="font-size: 20px"
+            >
+              <svg
+                class="me-2"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#000"
+                width="24"
+                height="24"
+                class="bi bi-menu-button-wide"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v2A1.5 1.5 0 0 1 14.5 5h-13A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-13z"
+                />
+                <path
+                  d="M2 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm10.823.323-.396-.396A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"
+                />
+              </svg>
+              條件篩選
+            </div>
+          </div>
+          <div class="offcanvas-body p-1">
+            <p class="fw-bold" style="font-size: 20px">分類</p>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label class="form-check-label mb-2" for="flexCheckDefault">
+                家電類
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault2"
+              />
+              <label class="form-check-label mb-2" for="flexCheckDefault2">
+                食物類
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault3"
+              />
+              <label class="form-check-label mb-2" for="flexCheckDefault3">
+                清潔類
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault4"
+              />
+              <label class="form-check-label mb-2" for="flexCheckDefault4">
+                遊戲類
+              </label>
+            </div>
+            <div class="collapse" id="filter-collapse">
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault5"
+                />
+                <label class="form-check-label fs-7" for="flexCheckDefault5">
+                  居家生活類
+                </label>
+              </div>
+              <div class="form-check mb-2">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault6"
+                />
+                <label class="form-check-label fs-7" for="flexCheckDefault6">
+                  限制級類
+                </label>
+              </div>
+            </div>
+            <p
+              class="cursor-pointer d-flex align-items-center"
+              id="filter-collapse-btn"
+            >
+              <svg
+                class="me-2 transition-transform"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-caret-down-fill"
+                viewBox="0 0 16 16"
+                id="filter-icon"
+              >
+                <path
+                  d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
+                />
+              </svg>
+              <span id="filter-btn-text" class="fs-7"> 顯示更多 </span>
+            </p>
+            <hr class="w-75" />
+            <p class="fw-bold" style="font-size: 20px">出貨地點</p>
+            <div class="form-check mb-2">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault7"
+              />
+              <label class="form-check-label" for="flexCheckDefault7">
+                國內
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault8"
+              />
+              <label class="form-check-label" for="flexCheckDefault8">
+                海外
+              </label>
+            </div>
+            <hr class="w-75" />
+            <p class="fw-bold" style="font-size: 20px">價格範圍</p>
+            <div class="d-flex justify-content-center">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="最低價"
+                aria-label="default input example"
+              />
+              <hr class="mx-2" style="width: 50px" />
+              <input
+                class="form-control"
+                type="text"
+                placeholder="最高價"
+                aria-label="default input example"
+              />
+            </div>
+            <button type="button" class="btn btn-primary w-100 mt-3 text-white">
+              套用
+            </button>
+          </div>
+        </div>
+        <!--轉圈 Loading-->
+        <div class="col d-none" id="spinner-wrapper">
+          <div class="d-flex justify-content-center m-5 flex-wrap">
+            <div class="spinner-border text-danger" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <p
+              class="w-100 text-danger text-center mt-2 ms-3 fw-bold"
+              style="font-size: 25px"
+            >
+              商品載入中...
+            </p>
+          </div>
+        </div>
+        <div class="col" id="items-wrapper">
           <div
             class="d-flex justify-content-between align-items-center"
             style="height: 80px"
@@ -224,11 +403,56 @@
               </svg>
             </button>
           </div>
+          <!-- 商品列表 分類 -->
+          <ul
+            class="nav nav-pills bg-secondary rounded p-2 d-flex"
+            style="font-size: 14px"
+          >
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >綜合排名</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">最新商品</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">熱銷商品</a>
+            </li>
+          </ul>
+          <!-- 商品列表 商品 -->
+          <div class="container">
+            <div
+              class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"
+              id="list"
+            ></div>
+          </div>
+          <!-- 商品列表 分頁 -->
+          <nav aria-label="Page navigation example">
+            <ul
+              class="pagination d-flex justify-content-center align-items-center justify-content-md-end mt-4 fw-bold"
+            >
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>
 
     <!-- offcanvas -->
+    <!-- 手機板篩選欄 -->
     <div
       class="offcanvas offcanvas-start"
       tabindex="-1"
@@ -311,32 +535,34 @@
             遊戲類
           </label>
         </div>
-        <div class="form-check mb-2">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault5"
-          />
-          <label class="form-check-label fs-7" for="flexCheckDefault5">
-            居家生活類
-          </label>
+
+        <div class="collapse" id="filter-mobile-collapse">
+          <div class="form-check mb-2">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault5"
+            />
+            <label class="form-check-label fs-7" for="flexCheckDefault5">
+              居家生活類
+            </label>
+          </div>
+          <div class="form-check mb-2">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault6"
+            />
+            <label class="form-check-label fs-7" for="flexCheckDefault6">
+              限制級類
+            </label>
+          </div>
         </div>
-        <div class="form-check mb-2">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault6"
-          />
-          <label class="form-check-label fs-7" for="flexCheckDefault6">
-            限制級類
-          </label>
-        </div>
-        <div class="collapse" id="filter-collapse"></div>
         <p
           class="cursor-pointer d-flex align-items-center"
-          id="filter-collapse-btn"
+          id="filter-mobile-collapse-btn"
         >
           <svg
             class="me-2 transition-transform"
@@ -346,13 +572,13 @@
             fill="currentColor"
             class="bi bi-caret-down-fill"
             viewBox="0 0 16 16"
-            id="filter-icon"
+            id="filter-mobile-icon"
           >
             <path
               d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
             />
           </svg>
-          <span id="filter-btn-text" class="fs-7"> 顯示更多 </span>
+          <span id="filter-mobile-btn-text" class="fs-7"> 顯示更多 </span>
         </p>
         <hr class="w-75" />
         <p class="fw-bold" style="font-size: 20px">出貨地點</p>
@@ -396,67 +622,125 @@
         </button>
       </div>
     </div>
-=======
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
+    <!-- 購物車 Modal -->
+    <div class="modal" tabindex="-1" id="cart">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              class="bi bi-cart4"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
+              />
+            </svg>
+            <h5 class="modal-title fw-bold m-2 pt-1" style="font-size: 25px">
+              購物車
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="d-flex align-items-center">
+                  <img
+                    src="https://bruce-fe-ec.web.app/images/item.png"
+                    style="width: 50px; height: 50px"
+                  />
+                  <p class="flex-grow-1 ms-2 mt-3">這是一罐沐浴乳</p>
+                  <p class="text-primary fw-bold ms-2 mt-3">$2000</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="#d0021c"
+                    class="bi bi-trash-fill ms-2"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex align-items-center">
+                  <img
+                    src="https://bruce-fe-ec.web.app/images/item.png"
+                    style="width: 50px; height: 50px"
+                  />
+                  <p class="flex-grow-1 ms-2 mt-3">這是一罐沐浴乳</p>
+                  <p class="text-primary fw-bold ms-2 mt-3">$2000</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="#d0021c"
+                    class="bi bi-trash-fill ms-2"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="d-flex align-items-center">
+                  <img
+                    src="https://bruce-fe-ec.web.app/images/item.png"
+                    style="width: 50px; height: 50px"
+                  />
+                  <p class="flex-grow-1 ms-2 mt-3">這是一罐沐浴乳</p>
+                  <p class="text-primary fw-bold ms-2 mt-3">$2000</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="#d0021c"
+                    class="bi bi-trash-fill ms-2"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"
+                    />
+                  </svg>
+                </div>
+              </li>
+            </ul>
+            <!-- <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="#d0021c"
+              class="bi bi-trash-fill ms-2"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"
+              />
+            </svg> -->
+          </div>
+          <div class="modal-footer d-flex justify-content-between">
+            <p class="fw-bold">
+              共<span class="text-primary m-2">3</span>筆項目
+            </p>
+            <button type="button" class="btn btn-primary text-white">
+              去買單
             </button>
-          </form>
+          </div>
         </div>
       </div>
-    </nav>
->>>>>>> 09cb5acc91ad1f69eeaa8e7daea9c1a941e53056
+    </div>
   </body>
 </html>
