@@ -1,58 +1,22 @@
 // Custom.scss
-// Option A: Include all of Bootstrap
+// Option B: Include parts of Bootstrap
 
-// Include any default variable overrides here (though functions won't be available)
-// $primary: #fb5830;
-// $secondary: #e9ecef;
-
-// @import "../node_modules/bootstrap/scss/bootstrap";
-
-// Then add additional custom code here
-// $utilities: map-merge(
-//   $utilities,
-//   (
-//     "cursor": (
-//       responsive: true,
-//       property: cursor,
-//       class: cursor,
-//       values: pointer,
-//     ),
-//     "transform": (
-//       responsive: true,
-//       property: transform,
-//       values: (
-//         rotate-180: rotate(0.5turn),
-//       ),
-//     ),
-//     "transition": (
-//       responsive: true,
-//       property: transition,
-//       values: (
-//         transform: transform 0.2s,
-//       ),
-//     ),
-//   )
-// );
-
-// $utilities-bg-colors: map-merge(
-//   $utilities-bg-colors,
-//   (
-//     "line": #f97160,
-//     "gray-200": #e9ecef,
-//   )
-// );
-// Create your own map
-
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
 $primary: #fb5830;
 $secondary: #e9ecef;
 
 @import "../node_modules/bootstrap/scss/variables";
-
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/root";
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/utilities";
+
+// 4. Include any default map overrides here
+
 $utilities: map-merge(
   $utilities,
   (
@@ -115,4 +79,7 @@ $utilities: map-merge(
   )
 );
 
-@import "../node_modules/bootstrap/scss/bootstrap";
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilit
+
+@import "../node_modules/bootstrap/scss/utilities/api";
+@import "../node_modules/bootstrap/";
